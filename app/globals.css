@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap");
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -17,7 +19,7 @@ body {
 }
 
 p {
-  color: black;
+  color: white;
   font-size: 2rem;
 }
 .contenedor {
@@ -192,7 +194,6 @@ select option {
   background-color: #ecf0f1;
 }
 
-
 button {
   background-color: #6c47db;
   color: white;
@@ -210,7 +211,7 @@ button {
   margin-top: 4rem;
 }
 button {
-  background-color: #6C47DB; /* púrpura base */
+  background-color: #6c47db; /* púrpura base */
   color: white;
   border: none;
   border-radius: 3rem;
@@ -221,8 +222,8 @@ button {
 }
 
 button:hover {
-  background-color: #28a745; 
-  transform: scale(1.05);    
+  background-color: #28a745;
+  transform: scale(1.05);
 }
 
 .click-indicador {
@@ -234,4 +235,803 @@ button:hover {
   transition: transform 0.3s ease;
   z-index: 2;
   color: white;
+}
+/* ===== Estilos generales (desktop) ===== */
+.encabezado {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(70%);
+}
+
+.navegacion {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5rem;
+  background-color: white;
+}
+
+.navegacion-principal {
+  display: flex;
+  gap: 2rem;
+}
+
+.enlace {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.titulo-diferente {
+  font-family: "Lobster", cursive;
+  color: red;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.titulo {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.enlace:hover {
+  color: red;
+  font-weight: 900;
+}
+
+.pie-pagina {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.red-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.red {
+  font-size: 1.5rem;
+}
+
+.red-social img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.sociales {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+}
+
+.navegacion-foot a {
+  color: black;
+}
+
+.creditos {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.peliculas-titulo {
+  text-align: left;
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.peliculas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 columnas en desktop */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pelicula {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 1rem 4px 10rem #b44efe;
+  overflow: hidden;
+  max-width: 260px;
+  margin: 1rem auto;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.pelicula:hover {
+  box-shadow: 1rem 4px 15rem #8a36e5;
+}
+
+.pelicula img {
+  width: 100%;
+  display: block;
+  border-radius: 2rem;
+}
+
+.pelicula h3 {
+  margin: 0.5rem 1rem 0.25rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.pelicula .fecha,
+.pelicula .generos {
+  margin: 0 1rem 0.25rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.pelicula .enlaces {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.75rem 1rem 1rem;
+}
+
+.pelicula .enlaces a {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem 0.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #0052cc;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: background 0.3s ease;
+}
+
+.pelicula .enlaces a:hover {
+  background: #003d99;
+}
+
+/* ===== MEDIA QUERY para celulares (ancho máximo 375px) ===== */
+@media screen and (max-width: 375px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .encabezado {
+    height: auto;
+    background-color: #360094;
+  }
+
+  .video {
+    height: 200px;
+  }
+
+  .navegacion {
+    flex-direction: column;
+    margin-top: 1.5rem;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .navegacion-principal {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .enlace {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .titulo-diferente {
+    font-size: 2.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .pie-pagina {
+    padding: 1rem 0.5rem;
+  }
+
+  .redes-sociales {
+    gap: 1rem;
+  }
+
+  .red-social img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .red {
+    font-size: 1.2rem;
+  }
+
+  .sociales {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+
+  .peliculas-titulo {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .peliculas {
+    grid-template-columns: 1fr; /* Una sola columna */
+    padding: 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .pelicula {
+    max-width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.75rem;
+    box-shadow: 0 2px 8px rgba(180, 78, 254, 0.5);
+  }
+
+  .pelicula h3 {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+  }
+
+  .pelicula .fecha,
+  .pelicula .generos {
+    font-size: 0.85rem;
+    margin: 0.15rem 0;
+  }
+
+  .pelicula .enlaces {
+    flex-direction: column;
+    gap: 0.3rem;
+    margin: 0.5rem 0 0;
+  }
+
+  .pelicula .enlaces a {
+    font-size: 0.8rem;
+    padding: 0.3rem 0;
+  }
+}
+.navegacion {
+  position: relative;
+  background: #11042d; /* fondo oscuro */
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo-link {
+  text-decoration: none;
+  color: white;
+}
+
+.titulo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: white;
+  margin: 0;
+}
+
+.titulo-diferente {
+  font-family: "Lobster", cursive;
+  color: red;
+}
+
+/* Ocultamos el menú principal en móvil inicialmente */
+.navegacion-principal {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #111;
+  width: 200px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.navegacion-principal.mostrar {
+  display: flex;
+}
+
+.enlace {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  font-size: 1.2rem;
+}
+
+.enlace:last-child {
+  border-bottom: none;
+}
+
+.enlace:hover {
+  background: red;
+  color: white;
+  font-weight: 700;
+}
+
+/* Estilos del icono hamburguesa */
+.hamburguesa {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburguesa span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación para cuando el menú está activo (cruz) */
+.hamburguesa.activo span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguesa.activo span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Desktop: mostramos menú horizontal y ocultamos hamburguesa */
+@media (min-width: 768px) {
+  .hamburguesa {
+    display: none;
+  }
+
+  .navegacion-principal {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+    box-shadow: none;
+  }
+
+  .enlace {
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
+  .enlace:hover {
+    background: none;
+    color: red;
+    font-weight: 700;
+  }
+}
+
+.buscador-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  position: absolute; /* O fixed */
+  top: 50rem; /* Posición inicial */
+  left: 20px; /* Posición inicial */
+  z-index: 1000;
+  cursor: move;
+}
+
+.buscador-input {
+  padding: 1.4rem;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  border-radius: 4px 0 0 4px;
+  width: 250px;
+  outline: none;
+  border-radius: 2rem;
+}
+
+.buscador-input:focus {
+  border-color: red;
+}
+
+.buscador-boton {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #0052cc;
+  color: white;
+  border: none;
+  border-radius: 1.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0;
+}
+
+.buscador-boton:hover {
+  background-color: #003d99;
+}
+.icono-red {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.menu-avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+.menu-avatar-menu {
+  position: absolute;
+  top: 50px;
+  left: 10px; /* Aquí está el cambio */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  z-index: 100;
+  font-size: 16px;
+}
+
+.menu-avatar-item {
+  display: block;
+  padding: 14px 20px;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-avatar-item:hover {
+  background-color: #f0f0f0;
+}
+
+.logout {
+  color: red;
+}
+
+@media (max-width: 400px) {
+  .menu-avatar {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 46px;
+    height: 46px;
+    border-width: 1.5px;
+  }
+
+  .menu-avatar-menu {
+    width: 160px;
+    font-size: 14px;
+  }
+
+  .menu-avatar-item {
+    padding: 12px 16px;
+  }
+}
+/* Contenedor principal */
+.main-container {
+  padding: 10px 15px;
+  background-color: #160e2c;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Título sección */
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #222;
+  text-align: center;
+}
+
+/* Grid de películas */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Tarjeta de película */
+.movie-card {
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 2rem 2rem 6px white;
+  text-align: center;
+}
+
+/* Imagen del póster */
+.movie-poster {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: 100%; /* para que ocupe el ancho de la tarjeta */
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+/* Título de la película */
+.movie-title {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+  color: #333;
+}
+
+/* Texto timestamp */
+.movie-timestamp {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Botón */
+.btn-more {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.btn-more:hover {
+  background-color: #005bb5;
+}
+
+.movie-detail-container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: "Arial", sans-serif;
+  color: #222;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+p {
+  font-size: 1rem;
+  margin: 8px 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+strong {
+  color: #444;
+}
+
+/* Para pantallas más grandes */
+@media (min-width: 768px) {
+  .movie-detail-container {
+    max-width: 700px;
+    padding: 24px;
+  }
+
+  .movie-title {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ////////////////////// */
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.movieCard {
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 1.2px 1.2px 2.5px white;
+  background-color: ;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.movieTitle {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.trailerLink,
+.movieLink {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem 0;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+}
+
+.trailerLink {
+  background-color: #0070f3;
+}
+
+.movieLink {
+  background-color: #21ba45;
+}
+
+.trailerLink:hover {
+  background-color: #005bb5;
+}
+
+.movieLink:hover {
+  background-color: #1a8a33;
+}
+
+.movie {
+  max-width: 375px;
+  margin: 1rem auto;
+  padding: 0.8rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-pelicula {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.video-pelicula {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.fecha-lanzamiento,
+.generos-pelicula {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.caratula {
+  margin-top: 1.5rem;
+  max-width: 10rem;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.encuentro {
+  display: flex;
+  gap: 2rem;
+  text-align: left;
+}
+.encuentro-parrafo {
+  display: flex;
+  flex-direction: column;
+}
+.puntuaciones {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #3D384B;
+  border-bottom: 1px solid #3D384B;
+  margin: 1rem;
+  padding: 1rem;
+}
+.puntuaciones p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+}
+.sinopsis {
+  border-radius: 10px;
+  text-align: left;
+  margin: 0;
+}
+.negro{
+  color: #000;
 }
