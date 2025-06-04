@@ -1091,6 +1091,7 @@ strong {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
   user-select: none;
+  width: 16rem;
 }
 
 .btn-comprar:hover,
@@ -1098,4 +1099,241 @@ strong {
   background-color: #0056b3;
   outline: none;
   box-shadow: 0 0 8px rgba(0, 86, 179, 0.7);
+}
+/* ////////////////////
+ */
+
+.lista-comentarios {
+  display: flex;
+  margin-left: 4rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+.comentarios-usuarios {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  width: 90%;
+  gap: 1rem;
+}
+.user {
+  width: 40px;
+  height: 40px;
+}
+.comentarios-usuarios div {
+  text-align: left;
+}
+.comentarios-usuarios div p {
+  text-align: left;
+}
+
+/* pantalla */
+
+.seats {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seat {
+  background-color: grey;
+  width: 20px;
+  height: 15px;
+  border-radius: 20px 20px 0 0;
+}
+.seat:hover {
+  cursor: pointer;
+  transform: scale(115%);
+  box-shadow: 0px 0px 1px white;
+}
+
+.seat.ocupped,
+.seat_reference.ocupped {
+  background-color: white;
+}
+.seat.ocupped:hover {
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.seat.reserved,
+.seat_reference.reserved {
+  background-color: #6feaf6;
+}
+.row {
+  display: flex;
+  margin-top: 15px;
+  gap: 30px;
+}
+.column {
+  display: flex;
+  gap: 5px;
+}
+
+.cinema {
+  perspective: 1000px;
+  text-align: center;
+}
+.screen {
+  background-color: white;
+  border: 1px solid transparent;
+  width: 300px;
+  height: 75px;
+  margin: 0 auto;
+  transform: rotateX(-50deg);
+  box-shadow: 0px 0px 10px white;
+  margin-bottom: 25px;
+}
+
+.img-size {
+  width: 299px;
+  height: 75px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.resume {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+.tickets {
+  color: #6feaf6;
+}
+
+.movies_selector {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.movies_selector select {
+  border-radius: 5px;
+  padding: 3px 5px;
+  margin: 10px;
+}
+
+.reference {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.reference li {
+  display: inline;
+  margin-right: 15px;
+}
+.seat_reference {
+  background-color: grey;
+  width: 20px;
+  height: 15px;
+  border-radius: 20px 20px 0 0;
+}
+.reference li span {
+  display: inline-block;
+  margin-right: 8px;
+}
+.button {
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: medium;
+  margin-top: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.parte-1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.video-compra {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.poster-comprar {
+  width: 12rem;
+  position: absolute;
+  top: 15rem;
+  left: 1rem;
+  border-radius: 1rem;
+}
+.poster-name {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+.poster-name h3 {
+  margin: 0;
+}
+.poster-name p {
+  text-align: left;
+  margin-left: 14rem;
+}
+.movie-duration{
+  padding: 1rem;
+  background-color: #6c47db;
+  border-radius: 1rem;
+  margin-left: 4px;
+}
+.parte-2{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.parte-2 h2{
+  font-weight: 800;
+} 
+.seleccion{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.carta{
+  background-color: #4A4B56;
+  width: 5.5rem;
+  border-radius: 5px;
+  height: 6rem;
+}
+.carta p{
+  text-align: center;
+  font-weight: 800;  
+  font-size: 1.4rem
+}
+.carta:hover{
+  cursor: pointer;
+  background-color: #F74346;
+}
+.nueva{
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.nueva p {
+  text-align: center;
+  margin: 0;
+}
+.btno-comprar{
+  margin-right: 1rem;
+}
+.centro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn-continuar-comprar{
+  width: 90%;
+  /* // centrar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
 }

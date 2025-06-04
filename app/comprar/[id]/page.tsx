@@ -1,10 +1,15 @@
-"use client";
+import Pantalla from "@/componentes/organismos/Pantalla";
+import Link from "next/link";
 
 const movies = {
   "1": {
+    id: "1",
     imdbId: "tt3915174",
     title: "Puss in Boots: The Last Wish",
     releaseDate: "2022-12-21",
+    year: "2022",
+    duration: "102 min",
+    director: "Joel Crawford",
     trailerLink: "https://www.youtube.com/watch?v=tHb7WlgyaUc",
     movieLink:
       "https://attackertv.so/watch-movie/puss-in-boots-the-last-wish-91342.9221629",
@@ -19,9 +24,13 @@ const movies = {
     },
   },
   "2": {
+    id: "2",
     imdbId: "tt1630029",
     title: "Avatar: The Way of Water",
     releaseDate: "2022-12-16",
+    year: "2022",
+    duration: "192 min",
+    director: "James Cameron",
     trailerLink: "https://www.youtube.com/watch?v=d9MyW72ELq0",
     movieLink:
       "https://attackertv.so/watch-movie/avatar-the-way-of-water-79936.9224431",
@@ -36,9 +45,13 @@ const movies = {
     },
   },
   "3": {
+    id: "3",
     imdbId: "tt8760708",
     title: "M3GAN",
     releaseDate: "2023-01-06",
+    year: "2023",
+    duration: "105 min",
+    director: "Gerard Johnstone",
     trailerLink: "https://www.youtube.com/watch?v=BRb4U99OU80",
     movieLink: "https://attackertv.so/watch-movie/m3gan-91330.9252829",
     poster: "https://image.tmdb.org/t/p/w500/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg",
@@ -52,9 +65,13 @@ const movies = {
     },
   },
   "4": {
+    id: "4",
     imdbId: "tt11116912",
     title: "Troll",
     releaseDate: "2022-12-01",
+    year: "2022",
+    duration: "112 min",
+    director: "Roar Uthaug",
     trailerLink: "https://www.youtube.com/watch?v=AiohkY_XQYQ",
     movieLink: "https://attackertv.so/watch-movie/troll-89830.9190984",
     poster: "https://image.tmdb.org/t/p/w500/9z4jRr43JdtU66P0iy8h18OyLql.jpg",
@@ -68,9 +85,13 @@ const movies = {
     },
   },
   "5": {
+    id: "5",
     imdbId: "tt6443346",
     title: "Black Adam",
     releaseDate: "2022-10-19",
+    year: "2022",
+    duration: "125 min",
+    director: "Jaume Collet-Serra",
     trailerLink: "https://www.youtube.com/watch?v=JaV7mmc9HGw",
     movieLink: "https://attackertv.so/watch-movie/black-adam-82087.9064972",
     poster: "https://image.tmdb.org/t/p/w500/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
@@ -84,9 +105,13 @@ const movies = {
     },
   },
   "6": {
+    id: "6",
     imdbId: "tt0499549",
     title: "Avatar",
     releaseDate: "2009-12-15",
+    year: "2009",
+    duration: "162 min",
+    director: "James Cameron",
     trailerLink: "https://www.youtube.com/watch?v=5PSNL1qE6VY",
     movieLink: "https://attackertv.so/watch-movie/avatar-19690",
     poster: "https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
@@ -100,9 +125,13 @@ const movies = {
     },
   },
   "7": {
+    id: "7",
     imdbId: "tt3447590",
     title: "Roald Dahl's Matilda the Musical",
     releaseDate: "2022-11-25",
+    year: "2022",
+    duration: "115 min",
+    director: "Matthew Warchus",
     trailerLink: "https://www.youtube.com/watch?v=lroAhsDr2vI",
     movieLink:
       "https://attackertv.so/watch-movie/roald-dahls-matilda-the-musical-91756.9246883",
@@ -117,9 +146,13 @@ const movies = {
     },
   },
   "8": {
+    id: "8",
     imdbId: "tt9114286",
     title: "Black Panther: Wakanda Forever",
     releaseDate: "2022-11-11",
+    year: "2022",
+    duration: "161 min",
+    director: "Ryan Coogler",
     trailerLink: "https://www.youtube.com/watch?v=_Z3QKkl1WyM",
     movieLink:
       "https://attackertv.so/watch-movie/black-panther-ii-66672.9148009",
@@ -132,48 +165,86 @@ const movies = {
       sensacine: "4.1/5",
       esponif: "7.0/10",
     },
-},
+  },
 };
 
-import { useState } from "react";
+interface Props {
+  params: {
+    id: string;
+  };
+}
 
-
-export default function ComprarPage({ params }) {
+export default function ComprarPage({ params }: Props) {
   const { id } = params;
-  const pelicula = movies[id];
-
-  const [cantidad, setCantidad] = useState(1);
-
-  if (!pelicula) {
-    return <p>Pelicula no encontrada.</p>;
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    alert(`Compraste ${cantidad} entrada(s) para ${pelicula.title} por $${cantidad * 10}`);
-    // Aquí puedes hacer un fetch para enviar la orden a un API, etc.
-  }
+  const movie = movies[id];
+  const trailerId = movie.trailerLink.split("v=")[1]?.split("&")[0];
+  const embedLink = `https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1`;
 
   return (
-    <div>
-      <h1>Comprar: {pelicula.title}</h1>
-      <p>Fecha de lanzamiento: {pelicula.releaseDate}</p>
-      <p>Precio: $10 por entrada</p>
-
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="cantidad">Cantidad de entradas:</label>
-        <input
-          type="number"
-          id="cantidad"
-          min="1"
-          max="10"
-          value={cantidad}
-          onChange={(e) => setCantidad(Number(e.target.value))}
-          required
-        />
-
-        <button type="submit">Confirmar compra</button>
-      </form>
+    <div className="centro">
+      <div className="parte-1">
+        <iframe
+          className="video-compra w-full h-full"
+          src={embedLink}
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          frameBorder="0"
+        ></iframe>
+        <div className="poster-name">
+          <img
+            src={movie.poster}
+            className="poster-comprar"
+            alt={movie.title}
+          />
+          <h3>{movie.title}</h3>
+          <p>
+            DURACION: <span className="movie-duration">{movie.duration}</span>
+          </p>
+          <p>
+            AÑO: <span className="movie-duration">{movie.year}</span>
+          </p>
+        </div>
+      </div>
+      <div className="parte-2">
+        <h2>Seleccionar dia</h2>
+        <div className="seleccion">
+          <div className="carta">
+            <p>May</p>
+            <p>1</p>
+          </div>
+          <div className="carta">
+            <p>May</p>
+            <p>2</p>
+          </div>
+          <div className="carta">
+            <p>May</p>
+            <p>3</p>
+          </div>
+          <div className="carta">
+            <p>May</p>
+            <p>4</p>
+          </div>
+          <div className="carta">
+            <p>May</p>
+            <p>5</p>
+          </div>
+        </div>
+      </div>
+      <div className="parte-3">
+        <h2>Seleccionar calidad</h2>
+        <div className="seleccion">
+          <div className="carta nueva">
+            <p>2D</p>
+          </div>
+          <div className="carta nueva">
+            <p>3D</p>
+          </div>
+        </div>
+      </div>
+      <Pantalla />
+      <Link href="">
+        <button className="btn-continuar-comprar botones">Continuar</button>
+      </Link>
     </div>
   );
 }

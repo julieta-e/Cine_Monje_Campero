@@ -164,7 +164,7 @@ export default function Pagina({ params }) {
         className="video-pelicula"
         width="640"
         height="360"
-        src={`https://www.youtube.com/embed/${idVideo}`}
+        src={`https://www.youtube.com/embed/${idVideo}?autoplay=1&mute=1`}
         title={pelicula.title}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -205,6 +205,38 @@ export default function Pagina({ params }) {
         <img src="/icono.png" alt="Perfil del usuario" />
         <input type="text" placeholder="Añade un comentario" />
       </div>
+      <div className="lista-comentarios">
+        <div className="comentarios-usuarios">
+          <img className="user" src="/icono.png" alt="" />
+          <div>
+            <b>Cesar Lopez</b>
+            <p>Estuvo bien la película</p>
+          </div>
+        </div>
+        <div className="comentarios-usuarios">
+          <img className="user" src="/icono.png" alt="" />
+          <div>
+            <b>Carlos Ríos</b>
+            <p>
+              Buena película, aunque algunas escenas fueron algo predecibles.
+              Aun así, el mensaje que transmite y la ambientación general son
+              muy destacables. La disfruté bastante.
+            </p>
+          </div>
+        </div>
+        <div className="comentarios-usuarios">
+          <img className="user" src="/icono.png" alt="" />
+          <div>
+            <b>María José Aguilar</b>
+            <p>
+              Sin duda una de las mejores que he visto últimamente. Me hizo
+              reír, emocionarme y pensar. Muy recomendable para todo tipo de
+              público, especialmente si buscas algo diferente.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <Link href={`/comprar/${id}`}>
         <button className="btn-comprar" type="button">
           Comprar
