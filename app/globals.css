@@ -9,6 +9,15 @@ html {
 *:after {
   box-sizing: inherit;
 }
+/* styles/global.css */
+:root {
+  --font-roboto: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+}
+
 body {
   font-size: 1.6rem;
   line-height: 1.8;
@@ -911,9 +920,8 @@ strong {
 
 .movieCard {
   border-radius: 8px;
-  padding: 0.5rem;
-  box-shadow: 1.2px 1.2px 2.5px white;
-  background-color: ;
+  padding: 1rem;
+  background-color: #2a0e4b;
 }
 
 .poster {
@@ -924,7 +932,8 @@ strong {
 
 .movieTitle {
   margin: 0.5rem 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 .links {
@@ -1618,4 +1627,8 @@ todo antes del desastre
   padding: 7px;
   margin: 1rem auto;
   border-radius: 0.7rem;
+}
+.pp{
+  font-size: 1rem;
+  text-align: left;
 }

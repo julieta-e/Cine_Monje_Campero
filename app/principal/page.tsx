@@ -93,16 +93,17 @@ const Lista: React.FC = () => {
   return (
     <>
       <Header />
+      <h2>Monje campero</h2>
       <div className="container">
         <div className="movieList">
           {movies.map((movie) => (
             <div key={movie.id} className="movieCard">
               <img src={movie.poster} alt={movie.title} className="poster" />
               <h3 className="movieTitle">{movie.title}</h3>
-              <p>
+              <p className="pp">
                 <b>Fecha:</b> {movie.releaseDate}
               </p>
-              <p>
+              <p className="pp">
                 <b>Géneros:</b> {movie.genres.join(", ")}
               </p>
               <div className="links">
