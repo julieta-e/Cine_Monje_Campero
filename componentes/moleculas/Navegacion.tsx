@@ -52,7 +52,7 @@ const Navegacion = () => {
         </a>
         <a
           className="enlace"
-          href="/streaming"
+          href="/streming"
           onClick={() => setMenuAbierto(false)}
         >
           Streaming

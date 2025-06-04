@@ -1265,7 +1265,7 @@ strong {
   color: white;
   display: flex;
   flex-direction: column;
-  gap:1rem;
+  gap: 1rem;
 }
 .poster-name h3 {
   margin: 0;
@@ -1274,42 +1274,42 @@ strong {
   text-align: left;
   margin-left: 14rem;
 }
-.movie-duration{
+.movie-duration {
   padding: 1rem;
   background-color: #6c47db;
   border-radius: 1rem;
   margin-left: 4px;
 }
-.parte-2{
+.parte-2 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
 }
-.parte-2 h2{
+.parte-2 h2 {
   font-weight: 800;
-} 
-.seleccion{
+}
+.seleccion {
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
-.carta{
-  background-color: #4A4B56;
+.carta {
+  background-color: #4a4b56;
   width: 5.5rem;
   border-radius: 5px;
   height: 6rem;
 }
-.carta p{
+.carta p {
   text-align: center;
-  font-weight: 800;  
-  font-size: 1.4rem
+  font-weight: 800;
+  font-size: 1.4rem;
 }
-.carta:hover{
+.carta:hover {
   cursor: pointer;
-  background-color: #F74346;
+  background-color: #f74346;
 }
-.nueva{
+.nueva {
   width: 5rem;
   height: 5rem;
   display: flex;
@@ -1321,19 +1321,301 @@ strong {
   text-align: center;
   margin: 0;
 }
-.btno-comprar{
+.btno-comprar {
   margin-right: 1rem;
 }
-.centro{
+.centro {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.btn-continuar-comprar{
+.btn-continuar-comprar {
   width: 90%;
   /* // centrar */
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
+}
+
+/* 
+ */
+
+.historial-container {
+  padding: 10px;
+}
+
+.historial-titulo {
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+
+.lista-peliculas-historial {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.pelicula-card {
+  flex: 1 1 calc(50% - 12px); /* dos columnas menos el gap */
+  max-width: calc(50% - 12px);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.pelicula-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pelicula-poster {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pelicula-titulo {
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+/*  */
+
+.perfil-container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.perfil-titulo {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.perfil-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-imagen {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.perfil-info {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+.perfil-info p strong {
+  color: rgb(209, 70, 23);
+}
+.perfil-info p {
+  color: #000;
+}
+.perfil-boton {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.perfil-boton:hover {
+  background-color: #d32f2f;
+}
+
+.otro-seleccion {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.decarta {
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  flex-shrink: 0;
+}
+.otra-carta {
+  width: 9rem;
+}
+.tarjeta-pelicula {
+  display: flex;
+  padding: 1rem;
+  margin: 2rem 0;
+  box-shadow: 2px 1px 1rem #b44efe;
+}
+.peli-info-poster {
+  width: 20rem;
+  height: 24rem;
+}
+.info-peliculas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.uno-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.uno-info p {
+  text-align: left;
+  color: white;
+  font-weight: 700;
+}
+.uno-info p strong {
+  color: white;
+}
+.dos-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+.dos-info p {
+  text-align: center;
+  background-color: #777;
+  color: white;
+  width: 5rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+.dos-info p:hover {
+  background-color: #d32f2f;
+}
+.dosd {
+  background-color: #462283;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+.mayores {
+  background-color: #1a8a33;
+  padding: 0.5rem;
+}
+.titulo-horario {
+  border-bottom: 1px solid #ccc;
+}
+
+/* oferta */
+
+.title-oferta {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+
+.ofertas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.ofertas img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.ofertas img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 
+todo antes del desastre
+
+
+
+*/
+.title-confiteria {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+.snack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4b1f82;
+  margin: 1rem;
+  border-radius: 2rem;
+}
+.snack-image {
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem;
+  border-radius: 2rem;
+}
+.snack-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quantity-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.quantity-control button {
+  margin: 0;
+  border-radius: 0.5rem;
+}
+.pipocas {
+  font-size: 1.3rem;
+  text-align: left;
+}
+.pi {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 800;
+  margin: 5px;
+}
+.price {
+  background-color: #28a745;
+  width: 4rem;
+  padding: 7px;
+  margin: 1rem auto;
+  border-radius: 0.7rem;
 }

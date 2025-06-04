@@ -10,7 +10,7 @@ const MenuAvatar = () => {
   return (
     <div className="menu-avatar-container">
       <img
-        src="https://i.pravatar.cc/40"
+        src="/icono.png"
         alt="Avatar usuario"
         onClick={toggleMenu}
         className="menu-avatar"
@@ -26,21 +26,15 @@ const MenuAvatar = () => {
             Perfil
           </a>
           <a
-            href="/historial-peliculas"
+            href="/historial"
             className="menu-avatar-item"
             onClick={() => setAbierto(false)}
           >
             Historial de Peliculas
           </a>
+
           <a
-            href="/estreno"
-            className="menu-avatar-item"
-            onClick={() => setAbierto(false)}
-          >
-            Estreno
-          </a>
-          <a
-            href="/cerrar-sesion"
+            href="/principal"
             className="menu-avatar-item logout"
             onClick={() => setAbierto(false)}
           >
