@@ -1016,8 +1016,8 @@ strong {
   gap: 6rem;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #3D384B;
-  border-bottom: 1px solid #3D384B;
+  border-top: 1px solid #3d384b;
+  border-bottom: 1px solid #3d384b;
   margin: 1rem;
   padding: 1rem;
 }
@@ -1032,6 +1032,70 @@ strong {
   text-align: left;
   margin: 0;
 }
-.negro{
+.negro {
   color: #000;
+}
+
+/* Comentarios */
+
+.titulo-comentarios {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comentarios {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 450px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comentarios img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comentarios input[type="text"] {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comentarios input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+.btn-comprar {
+  background-color: #007bff; /* azul primario */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+  user-select: none;
+}
+
+.btn-comprar:hover,
+.btn-comprar:focus {
+  background-color: #0056b3;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.7);
 }

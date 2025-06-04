@@ -1,7 +1,7 @@
-import Link from "next/link";
+"use client";
+
 const movies = {
   "1": {
-    id: "1",
     imdbId: "tt3915174",
     title: "Puss in Boots: The Last Wish",
     releaseDate: "2022-12-21",
@@ -19,8 +19,6 @@ const movies = {
     },
   },
   "2": {
-    id: "2",
-
     imdbId: "tt1630029",
     title: "Avatar: The Way of Water",
     releaseDate: "2022-12-16",
@@ -38,8 +36,6 @@ const movies = {
     },
   },
   "3": {
-    id: "3",
-
     imdbId: "tt8760708",
     title: "M3GAN",
     releaseDate: "2023-01-06",
@@ -56,8 +52,6 @@ const movies = {
     },
   },
   "4": {
-    id: "4",
-
     imdbId: "tt11116912",
     title: "Troll",
     releaseDate: "2022-12-01",
@@ -74,8 +68,6 @@ const movies = {
     },
   },
   "5": {
-    id: "5",
-
     imdbId: "tt6443346",
     title: "Black Adam",
     releaseDate: "2022-10-19",
@@ -92,8 +84,6 @@ const movies = {
     },
   },
   "6": {
-    id: "6",
-
     imdbId: "tt0499549",
     title: "Avatar",
     releaseDate: "2009-12-15",
@@ -110,8 +100,6 @@ const movies = {
     },
   },
   "7": {
-    id: "7",
-
     imdbId: "tt3447590",
     title: "Roald Dahl's Matilda the Musical",
     releaseDate: "2022-11-25",
@@ -129,8 +117,6 @@ const movies = {
     },
   },
   "8": {
-    id: "8",
-
     imdbId: "tt9114286",
     title: "Black Panther: Wakanda Forever",
     releaseDate: "2022-11-11",
@@ -146,70 +132,48 @@ const movies = {
       sensacine: "4.1/5",
       esponif: "7.0/10",
     },
-  },
+},
 };
 
-export default function Pagina({ params }) {
+import { useState } from "react";
+
+
+export default function ComprarPage({ params }) {
   const { id } = params;
   const pelicula = movies[id];
 
-  const url = new URL(pelicula.trailerLink);
-  const idVideo = url.searchParams.get("v");
+  const [cantidad, setCantidad] = useState(1);
+
+  if (!pelicula) {
+    return <p>Pelicula no encontrada.</p>;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert(`Compraste ${cantidad} entrada(s) para ${pelicula.title} por $${cantidad * 10}`);
+    // Aquí puedes hacer un fetch para enviar la orden a un API, etc.
+  }
 
   return (
-    <div className="movie">
-      <h2 className="titulo-pelicula">{pelicula.title}</h2>
+    <div>
+      <h1>Comprar: {pelicula.title}</h1>
+      <p>Fecha de lanzamiento: {pelicula.releaseDate}</p>
+      <p>Precio: $10 por entrada</p>
 
-      <iframe
-        className="video-pelicula"
-        width="640"
-        height="360"
-        src={`https://www.youtube.com/embed/${idVideo}`}
-        title={pelicula.title}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="cantidad">Cantidad de entradas:</label>
+        <input
+          type="number"
+          id="cantidad"
+          min="1"
+          max="10"
+          value={cantidad}
+          onChange={(e) => setCantidad(Number(e.target.value))}
+          required
+        />
 
-      <div className="encuentro">
-        <img className="caratula" src={pelicula.poster} alt={pelicula.title} />
-        <div className="encuentro-parrafo">
-          <p className="fecha-lanzamiento">
-            Fecha de lanzamiento: {pelicula.releaseDate}
-          </p>
-          <p className="generos-pelicula">
-            Géneros: {pelicula.genres.join(", ")}
-          </p>
-          <h5>Sinopsis:</h5>
-          <p className="sinopsis">{pelicula.sinopsis}</p>
-        </div>
-      </div>
-      <div className="puntuaciones">
-        <p>
-          {" "}
-          {pelicula.puntuacion.imdb}
-          <span>IMDB</span>{" "}
-        </p>
-        <p>
-          {" "}
-          {pelicula.puntuacion.sensacine}
-          <span>Sensacine</span>
-        </p>
-        <p>
-          {pelicula.puntuacion.esponif}
-          <span>Esponif</span>
-        </p>
-      </div>
-      <h2 className="titulo-comentarios">Comentarios</h2>
-      <div className="comentarios">
-        <img src="/icono.png" alt="Perfil del usuario" />
-        <input type="text" placeholder="Añade un comentario" />
-      </div>
-      <Link href={`/comprar/${id}`}>
-        <button className="btn-comprar" type="button">
-          Comprar
-        </button>
-      </Link>
+        <button type="submit">Confirmar compra</button>
+      </form>
     </div>
   );
 }
