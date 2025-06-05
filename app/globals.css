@@ -1628,7 +1628,93 @@ todo antes del desastre
   margin: 1rem auto;
   border-radius: 0.7rem;
 }
-.pp{
+.pp {
   font-size: 1rem;
   text-align: left;
+}
+.confi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+.btn-conti {
+  margin: 2rem auto;
+  justify-content: center;
+  width: 15rem;
+  font-size: 1.5rem;
+}
+/* confi */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: #520466;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal-linea {
+  font-size: 1.5rem;
+  color: #1f2937; /* gris oscuro */
+}
+
+.modal-total {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #16a34a; /* verde */
+  margin-top: 1rem;
+}
+
+.btn-pagar {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 1rem;
+}
+
+
+
+.btn-pagar {
+  background-color: #16a34a;
+}
+
+.btn-pagar:hover {
+  background-color: #15803d;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

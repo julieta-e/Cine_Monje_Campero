@@ -242,7 +242,7 @@ export default function ComprarPage({ params }: Props) {
         </div>
       </div>
       <Pantalla />
-      <Link href="">
+      <Link href="/comprardos">
         <button className="btn-continuar-comprar botones">Continuar</button>
       </Link>
     </div>
