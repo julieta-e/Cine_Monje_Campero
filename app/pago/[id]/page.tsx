@@ -1,6 +1,5 @@
 "use client";
 
-import Snack from "@/componentes/organismos/Snack";
 import Link from "next/link";
 import React, { useState } from "react";
 const movies = {
@@ -9,9 +8,6 @@ const movies = {
     imdbId: "tt3915174",
     title: "Puss in Boots: The Last Wish",
     releaseDate: "2022-12-21",
-    year: "2022",
-    duration: "102 min",
-    director: "Joel Crawford",
     trailerLink: "https://www.youtube.com/watch?v=tHb7WlgyaUc",
     movieLink:
       "https://attackertv.so/watch-movie/puss-in-boots-the-last-wish-91342.9221629",
@@ -27,12 +23,10 @@ const movies = {
   },
   "2": {
     id: "2",
+
     imdbId: "tt1630029",
     title: "Avatar: The Way of Water",
     releaseDate: "2022-12-16",
-    year: "2022",
-    duration: "192 min",
-    director: "James Cameron",
     trailerLink: "https://www.youtube.com/watch?v=d9MyW72ELq0",
     movieLink:
       "https://attackertv.so/watch-movie/avatar-the-way-of-water-79936.9224431",
@@ -48,12 +42,10 @@ const movies = {
   },
   "3": {
     id: "3",
+
     imdbId: "tt8760708",
     title: "M3GAN",
     releaseDate: "2023-01-06",
-    year: "2023",
-    duration: "105 min",
-    director: "Gerard Johnstone",
     trailerLink: "https://www.youtube.com/watch?v=BRb4U99OU80",
     movieLink: "https://attackertv.so/watch-movie/m3gan-91330.9252829",
     poster: "https://image.tmdb.org/t/p/w500/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg",
@@ -68,12 +60,10 @@ const movies = {
   },
   "4": {
     id: "4",
+
     imdbId: "tt11116912",
     title: "Troll",
     releaseDate: "2022-12-01",
-    year: "2022",
-    duration: "112 min",
-    director: "Roar Uthaug",
     trailerLink: "https://www.youtube.com/watch?v=AiohkY_XQYQ",
     movieLink: "https://attackertv.so/watch-movie/troll-89830.9190984",
     poster: "https://image.tmdb.org/t/p/w500/9z4jRr43JdtU66P0iy8h18OyLql.jpg",
@@ -88,12 +78,10 @@ const movies = {
   },
   "5": {
     id: "5",
+
     imdbId: "tt6443346",
     title: "Black Adam",
     releaseDate: "2022-10-19",
-    year: "2022",
-    duration: "125 min",
-    director: "Jaume Collet-Serra",
     trailerLink: "https://www.youtube.com/watch?v=JaV7mmc9HGw",
     movieLink: "https://attackertv.so/watch-movie/black-adam-82087.9064972",
     poster: "https://image.tmdb.org/t/p/w500/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
@@ -108,12 +96,10 @@ const movies = {
   },
   "6": {
     id: "6",
+
     imdbId: "tt0499549",
     title: "Avatar",
     releaseDate: "2009-12-15",
-    year: "2009",
-    duration: "162 min",
-    director: "James Cameron",
     trailerLink: "https://www.youtube.com/watch?v=5PSNL1qE6VY",
     movieLink: "https://attackertv.so/watch-movie/avatar-19690",
     poster: "https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
@@ -128,12 +114,10 @@ const movies = {
   },
   "7": {
     id: "7",
+
     imdbId: "tt3447590",
     title: "Roald Dahl's Matilda the Musical",
     releaseDate: "2022-11-25",
-    year: "2022",
-    duration: "115 min",
-    director: "Matthew Warchus",
     trailerLink: "https://www.youtube.com/watch?v=lroAhsDr2vI",
     movieLink:
       "https://attackertv.so/watch-movie/roald-dahls-matilda-the-musical-91756.9246883",
@@ -149,12 +133,10 @@ const movies = {
   },
   "8": {
     id: "8",
+
     imdbId: "tt9114286",
     title: "Black Panther: Wakanda Forever",
     releaseDate: "2022-11-11",
-    year: "2022",
-    duration: "161 min",
-    director: "Ryan Coogler",
     trailerLink: "https://www.youtube.com/watch?v=_Z3QKkl1WyM",
     movieLink:
       "https://attackertv.so/watch-movie/black-panther-ii-66672.9148009",
@@ -169,58 +151,150 @@ const movies = {
     },
   },
 };
-interface Props {
-  params: {
-    id: string;
-  };
-}
-export default function Page({ params }: Props) {
+
+export default function Pagina({ params }) {
+  const [metodoSeleccionado, setMetodoSeleccionado] = useState("");
   const { id } = params;
   const movie = movies[id];
-  const [mostrarResumen, setMostrarResumen] = useState(false);
-
-  const resumenEntradas = [
-    { cantidad: 2, precioUnitario: 50 },
-    { cantidad: 2, precioUnitario: 50 },
-    { cantidad: 2, precioUnitario: 50 },
-  ];
-
-  const total = resumenEntradas.reduce(
-    (acc, entrada) => acc + entrada.cantidad * entrada.precioUnitario,
-    0
-  );
+  const volver = () => setMetodoSeleccionado("");
 
   return (
-    <div className="confi p-8 flex flex-col items-center relative min-h-screen">
-      <Snack />
+    <div className="centrar-pago">
+      <h2 className="title-pago">Medios de pago disponibles</h2>
 
-      <button
-        className="btn-conti mt-8"
-        onClick={() => setMostrarResumen(true)}
-      >
-        Continuar
-      </button>
+      {!metodoSeleccionado && (
+        <>
+          <p className="mensaje-pago">
+            Elige tu método de pago favorito. Todos nuestros métodos son seguros
+            y verificados.
+          </p>
 
-      {mostrarResumen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h2 className="modal-title">¡Resumen de tu compra!</h2>
-            {resumenEntradas.map((entrada, index) => (
-              <p key={index} className="modal-linea">
-                {entrada.cantidad}x entradas {entrada.precioUnitario}Bs
-              </p>
-            ))}
-            <p className="modal-total">Total: {total}Bs</p>
-            <Link href={`/pago/${movie.id}`}>
-              <button className="btn-pagar cl">Ir a pagar</button>
-            </Link>
-            <button
-              onClick={() => setMostrarResumen(false)}
-              className="cance cl"
+          <div className="pagos">
+            <div
+              className="pag"
+              onClick={() => setMetodoSeleccionado("tarjeta")}
             >
-              Calcelar
-            </button>
+              <img src="/tarjeta.jpg" alt="Tarjeta de crédito" />
+              <p>Tarjeta de crédito</p>
+            </div>
+
+            <div className="pag" onClick={() => setMetodoSeleccionado("tigo")}>
+              <img src="/tigo.jpg" alt="Tigo Money" />
+              <p>Tigo Money</p>
+            </div>
+
+            <div className="pag" onClick={() => setMetodoSeleccionado("qr")}>
+              <img src="/qr.jpg" alt="Pago por QR" />
+              <p>Pago por QR</p>
+            </div>
           </div>
+        </>
+      )}
+
+      {metodoSeleccionado === "tarjeta" && (
+        <div className="detalle-pago">
+          <h3>Pago con Tarjeta de Crédito</h3>
+          <form className="formulario-pago">
+            <label>
+              Número de tarjeta:
+              <input
+                type="text"
+                name="tarjeta"
+                placeholder="•••• •••• •••• ••••"
+                required
+              />
+            </label>
+
+            <label>
+              Fecha de nacimiento:
+              <input type="date" name="fecha" required />
+            </label>
+
+            <label>
+              Nombre del titular:
+              <input type="text" name="nombre" placeholder="Juan" required />
+            </label>
+
+            <label>
+              Apellido del titular:
+              <input type="text" name="apellido" placeholder="Pérez" required />
+            </label>
+
+            <label>
+              Dirección:
+              <input
+                type="text"
+                name="direccion"
+                placeholder="Calle Falsa 123"
+                required
+              />
+            </label>
+            <Link href={`/comprado/${movie.id}`}>
+              <button type="submit" className="btn-pagar">
+                Pagar
+              </button>
+            </Link>
+          </form>
+          <button onClick={volver} className="btn-volver">
+            ← Volver
+          </button>
+        </div>
+      )}
+
+      {metodoSeleccionado === "tigo" && (
+        <div className="detalle-pago">
+          <h3>Pago con Tigo Money</h3>
+          <form className="formulario-pago">
+            <label>
+              Número de celular:
+              <input
+                type="tel"
+                name="telefono"
+                placeholder="Ej: 76543210"
+                pattern="[6-7][0-9]{7}"
+                required
+              />
+            </label>
+
+            <p className="sms-aviso">
+              Se enviará un SMS a tu celular para confirmar la compra. Sigue las
+              instrucciones para completar el pago.
+            </p>
+            <Link href={`/comprado/${movie.id}`}>
+              <button type="submit" className="btn-pagar">
+                Confirmar
+              </button>
+            </Link>
+          </form>
+          <button onClick={volver} className="btn-volver">
+            ← Volver
+          </button>
+        </div>
+      )}
+
+      {metodoSeleccionado === "qr" && (
+        <div className="detalle-pago">
+          <h3>Pago por QR</h3>
+          <p>Escanee el siguiente QR para finalizar el pago.</p>
+          <img src="/qr.jpg" alt="Código QR para pago" className="imagen-qr" />
+          <p>
+            Una vez realizado el pago, presione{" "}
+            <strong className="cont">Confirmar</strong> para que podamos
+            verificarlo.
+          </p>
+
+          <div className="botones-qr">
+            <a href="/qr.jpg" download className="btn-descargar btn-pa">
+              Descargar QR
+            </a>
+            <Link href={`/comprado/${movie.id}`}>
+              <button className="botones-confi btn-pa">Confirmar</button>
+            </Link>
+          </div>
+
+          <button onClick={volver} className="btn-volver">
+            ← Volver
+          </button>
         </div>
       )}
     </div>

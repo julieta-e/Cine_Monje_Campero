@@ -180,6 +180,9 @@ export default function Pagina({ params }) {
           <p className="generos-pelicula">
             Géneros: {pelicula.genres.join(", ")}
           </p>
+          <p className="precio-bb">
+            Precio: <span className="precio">50bs</span>
+          </p>
           <h5>Sinopsis:</h5>
           <p className="sinopsis">{pelicula.sinopsis}</p>
         </div>

@@ -1231,7 +1231,7 @@ strong {
 }
 .reference li {
   display: inline;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 .seat_reference {
   background-color: grey;
@@ -1650,7 +1650,6 @@ todo antes del desastre
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1664,7 +1663,7 @@ todo antes del desastre
   text-align: center;
   max-width: 500px;
   width: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5rem 5rem #291233;
   animation: fadeIn 0.3s ease-out forwards;
 }
 
@@ -1676,14 +1675,16 @@ todo antes del desastre
 
 .modal-linea {
   font-size: 1.5rem;
-  color: #1f2937; /* gris oscuro */
+  color: white; /* gris oscuro */
 }
 
 .modal-total {
   font-size: 2rem;
   font-weight: bold;
-  color: #16a34a; /* verde */
+  color: white; /* verde */
   margin-top: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
 }
 
 .btn-pagar {
@@ -1697,9 +1698,16 @@ todo antes del desastre
   transition: 0.3s ease;
   margin-top: 1rem;
 }
+.cance {
+  background-color: #e53935;
+  margin: 1rem;
+}
 
-
-
+.cl {
+  width: 12rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
 .btn-pagar {
   background-color: #16a34a;
 }
@@ -1717,4 +1725,238 @@ todo antes del desastre
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.precio {
+  background-color: #15803d;
+  width: 5rem;
+  padding: 8px;
+}
+.precio-bb {
+  width: 7rem;
+}
+.confi-seccion {
+  display: flex;
+}
+.pipo-pipo {
+  width: 9rem;
+}
+.centrar-pago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2.5rem;
+  min-height: 100vh;
+}
+
+.title-pago {
+  border-bottom: 2px solid #ccc;
+  font-size: 2.8rem; /* aumentamos ligeramente */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.mensaje-pago {
+  font-size: 1.2rem; /* mayor legibilidad */
+  color: #bbbbbb;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 30rem;
+  line-height: 1.6;
+}
+
+.pagos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 26rem;
+  padding: 0 1rem;
+}
+
+.pag {
+  display: flex;
+  align-items: center;
+  background-color: #612f9b;
+  padding: 1.2rem 1.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(41, 18, 51, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s;
+  cursor: pointer;
+  gap: 1.2rem;
+}
+
+.pag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(41, 18, 51, 0.8);
+  background-color: #292929;
+}
+
+.pag:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(41, 18, 51, 0.5);
+}
+
+.pag p {
+  color: white;
+  font-size: 1.3rem; /* más grande */
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+.pag img {
+  width: 4.2rem; /* aumentamos tamaño de ícono */
+  height: 4.2rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Formulario */
+
+.formulario-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+.cont {
+  color: #16a34a;
+}
+
+.formulario-pago label {
+  color: #ddd;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.formulario-pago input {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: #222;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}
+
+.btn-pagar {
+  margin: 2rem auto;
+  background: #4caf50;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 14rem;
+  font-size: 1.1rem;
+}
+
+.btn-pagar:hover {
+  background: #43a047;
+}
+
+.sms-aviso {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* QR */
+
+.imagen-qr {
+  width: 14rem;
+  height: 14rem;
+  margin: 2rem auto;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.botones-qr {
+  display: flex;
+  gap: 1.2rem;
+  margin: 1.2rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-descargar,
+.btn-confirmar {
+  font-weight: bold;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  background-color: #009688;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+.btn-confirmar {
+  background-color: #4caf50;
+}
+.btn-descargar:hover,
+.btn-confirmar:hover {
+  background-color: #00796b;
+}
+.detalle-pago p {
+  font-size: 1.4rem;
+}
+.btn-pa {
+  width: 15rem;
+  margin: 0;
+  border-radius: 4rem;
+}
+/* ultimo paog */
+
+.confirmado-compra {
+  background-color: #1f1f1f;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 22rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.confirmado-compra img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.detalles-compra h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00e676;
+}
+
+.detalles-compra p {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+}
+
+.detalles-compra p strong {
+  color: #009688;
 }

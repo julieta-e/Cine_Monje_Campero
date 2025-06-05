@@ -1,8 +1,6 @@
-"use client";
-
-import Snack from "@/componentes/organismos/Snack";
+import Pantalla from "@/componentes/organismos/Pantalla";
 import Link from "next/link";
-import React, { useState } from "react";
+
 const movies = {
   "1": {
     id: "1",
@@ -169,60 +167,69 @@ const movies = {
     },
   },
 };
+
 interface Props {
   params: {
     id: string;
   };
 }
-export default function Page({ params }: Props) {
+
+export default function ComprarPage({ params }: Props) {
   const { id } = params;
   const movie = movies[id];
-  const [mostrarResumen, setMostrarResumen] = useState(false);
-
-  const resumenEntradas = [
-    { cantidad: 2, precioUnitario: 50 },
-    { cantidad: 2, precioUnitario: 50 },
-    { cantidad: 2, precioUnitario: 50 },
-  ];
-
-  const total = resumenEntradas.reduce(
-    (acc, entrada) => acc + entrada.cantidad * entrada.precioUnitario,
-    0
-  );
+  const trailerId = movie.trailerLink.split("v=")[1]?.split("&")[0];
+  const embedLink = `https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1`;
 
   return (
-    <div className="confi p-8 flex flex-col items-center relative min-h-screen">
-      <Snack />
-
-      <button
-        className="btn-conti mt-8"
-        onClick={() => setMostrarResumen(true)}
-      >
-        Continuar
-      </button>
-
-      {mostrarResumen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h2 className="modal-title">¡Resumen de tu compra!</h2>
-            {resumenEntradas.map((entrada, index) => (
-              <p key={index} className="modal-linea">
-                {entrada.cantidad}x entradas {entrada.precioUnitario}Bs
-              </p>
-            ))}
-            <p className="modal-total">Total: {total}Bs</p>
-            <Link href={`/pago/${movie.id}`}>
-              <button className="btn-pagar cl">Ir a pagar</button>
-            </Link>
-            <button
-              onClick={() => setMostrarResumen(false)}
-              className="cance cl"
-            >
-              Calcelar
-            </button>
-          </div>
+    <div className="centro">
+      <div className="parte-1">
+        <iframe
+          className="video-compra w-full h-full"
+          src={embedLink}
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          frameBorder="0"
+        ></iframe>
+        <div className="poster-name">
+          <img
+            src={movie.poster}
+            className="poster-comprar"
+            alt={movie.title}
+          />
+          <h3>{movie.title}</h3>
+          <p>
+            DURACION: <span className="movie-duration">{movie.duration}</span>
+          </p>
+          <p>
+            AÑO: <span className="movie-duration">{movie.year}</span>
+          </p>
+          <p className="generos-pelicula">
+            Géneros: {movie.genres.join(", ")}
+          </p>
         </div>
-      )}
+      </div>
+      <div className="confirmado-compra">
+        <img src="/qr.jpg" alt="QR de pago" />
+        <div className="detalles-compra">
+          <h3>Compra confirmada</h3>
+          <p>
+            <strong>Película:</strong> {movie.title}
+          </p>
+          <p>
+            <strong>Sala:</strong> 10
+          </p>
+          <p>
+            <strong>Horario:</strong> 14:00 pm
+          </p>
+          <p>
+            <strong>Asientos:</strong> E-2, E-6
+          </p>
+        </div>
+      </div>
+
+      <Link href={`/principal`}>
+        <button className="btn-continuar-comprar botones">Continuar</button>
+      </Link>
     </div>
   );
 }

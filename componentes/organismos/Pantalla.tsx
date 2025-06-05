@@ -98,13 +98,13 @@ const Pantalla = () => {
 
         <ul className="reference">
           <li>
-            <span className="seat_reference"></span>Available
+            <span className="seat_reference"></span>Disponible
           </li>
           <li>
-            <span className="seat_reference reserved"></span>Reserved
+            <span className="seat_reference reserved"></span>Reservado
           </li>
           <li>
-            <span className="seat_reference occupied"></span>Occupied
+            <span className="seat_reference occupied"></span>Ocupado
           </li>
         </ul>
 
@@ -129,11 +129,11 @@ const Pantalla = () => {
         </div>
 
         <p className="resume">
-          You have selected{" "}
+          has seleccionado{" "}
           <span id="selectedSeats" className="tickets">
             {selectedSeats}
           </span>{" "}
-          seats for a total price of $
+          Asientos por un precio total de bs
           <span id="price" className="tickets">
             {price}
           </span>
