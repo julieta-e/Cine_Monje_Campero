@@ -92,11 +92,11 @@ const Lista: React.FC = () => {
     },
   ];
   return (
-    <>
+    <div className="cambio">
       <Header />
       <ListaPeliculas movies={movies} />
       <Footer />
-    </>
+    </div>
   );
 };
 

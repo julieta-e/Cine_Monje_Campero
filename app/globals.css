@@ -24,7 +24,6 @@ body {
   margin: 0;
   min-height: 100vh;
   color: white;
-  background: linear-gradient(to bottom, #2e1371, #0e0429, #040308);
 }
 
 p {
@@ -249,9 +248,9 @@ button:hover {
 .encabezado {
   position: relative;
   width: 100%;
-  height: 100vh;
   background-color: white;
   overflow: hidden;
+  height: 50rem;
 }
 
 .video {
@@ -262,7 +261,7 @@ button:hover {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: brightness(70%);
+  filter: brightness(60%);
 }
 
 .navegacion {
@@ -309,7 +308,7 @@ button:hover {
 }
 
 .pie-pagina {
-  background-color: white;
+  background-color: rgb(61, 5, 117);
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -664,7 +663,7 @@ button:hover {
   gap: 1rem;
   margin: 1rem 0;
   position: absolute; /* O fixed */
-  top: 50rem; /* Posición inicial */
+  top: 40rem; /* Posición inicial */
   left: 20px; /* Posición inicial */
   z-index: 1000;
   cursor: move;
@@ -715,7 +714,8 @@ button:hover {
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid #333;
+  border: 172rem solid #4caf50;
+  background-color: #ffffff;
 }
 
 .menu-avatar-menu {
@@ -1923,7 +1923,10 @@ todo antes del desastre
   border-radius: 4rem;
 }
 /* ultimo paog */
-
+.negro{
+  color: white;
+  font-size: 1.4rem;
+}
 .confirmado-compra {
   background-color: #1f1f1f;
   border-radius: 1rem;
@@ -1959,4 +1962,191 @@ todo antes del desastre
 
 .detalles-compra p strong {
   color: #009688;
+}
+
+/* claro */
+/* Modo oscuro por defecto */
+body {
+  color: #eee;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo claro */
+body.modo-claro {
+  background-color: #fff;
+}
+body.modo-claro h2 {
+  color: black;
+}
+body.modo-claro h3 {
+  color: white;
+}
+
+body.modo-claro p {
+  color: white;
+}
+body.modo-claro span {
+  color: white;
+}
+body.modo-claro strong {
+  color: white;
+}
+/* Modo oscuro explícito (opcional) */
+body.modo-oscuro {
+  background: linear-gradient(145deg, #2e1371, #0e0429, #040308) !important ;
+  color: #eee;
+}
+.modo-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Botón cuando el modo es claro */
+.modo-btn.claro {
+  background-color: #eeeeee;
+  color: #111111;
+  border: 1px solid #ccc;
+}
+
+/* Botón cuando el modo es oscuro */
+.modo-btn.oscuro {
+  background-color: #2e1371;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+/* Perfil */
+
+/* Contenedor general */
+.perfil-container {
+  padding: 1.5rem 1rem;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Título principal */
+.perfil-titulo {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #4f46e5;
+  margin-bottom: 1.5rem;
+}
+
+/* Tarjeta de perfil */
+.perfil-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Imagen del usuario */
+.perfil-imagen {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a5b4fc;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.2);
+}
+
+/* Información del usuario */
+.perfil-info p {
+  font-size: 1rem;
+  color: #374151;
+  margin: 0.3rem 0;
+}
+
+/* Botón de cerrar sesión */
+.perfil-boton {
+  margin-top: 1.2rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #ef4444;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.perfil-boton:hover {
+  background-color: #dc2626;
+}
+
+/* Sección de películas favoritas */
+.peliculas-container {
+  margin-top: 1.5rem;
+}
+
+.peliculas-container h2 {
+  font-size: 1.5rem;
+  color: #1e40af;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Grid de películas */
+.peliculas-grid {
+}
+
+/* Tarjeta individual de película */
+.pelicula-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  padding: 0.7rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 30rem;
+}
+
+.pelicula-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Imagen de la película */
+.pelicula-imagen {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Título de película */
+.pelicula-titulo {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+/* Estado (vista / en línea) */
+.pelicula-estado {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.pelicula-estado.vista {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.pelicula-estado.enlinea {
+  background-color: #e0f2fe;
+  color: #1d4ed8;
 }

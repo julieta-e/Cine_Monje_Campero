@@ -1,19 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  // Por defecto modo oscuro
+  const [modo, setModo] = useState("oscuro");
 
-  const toggleMenu = () => {
-    setMenuAbierto(!menuAbierto);
+  const toggleMenu = () => setMenuAbierto(!menuAbierto);
+
+  // Alterna entre claro y oscuro
+  const toggleModo = () => {
+    setModo((prev) => (prev === "claro" ? "oscuro" : "claro"));
   };
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (modo === "claro") {
+      body.classList.add("modo-claro");
+      body.classList.remove("modo-oscuro");
+    } else {
+      body.classList.add("modo-oscuro");
+      body.classList.remove("modo-claro");
+    }
+  }, [modo]);
 
   return (
     <nav className="navegacion">
       <a href="/principal/" className="logo-link">
         <h1 className="titulo">
-          <img src="monje.png" className="monje" alt="" />
+          <img src="monje.png" className="monje" alt="Logo" />
         </h1>
       </a>
 
@@ -27,7 +44,7 @@ const Navegacion = () => {
         <span></span>
       </div>
 
-      {/* Menú, visible solo si menuAbierto es true */}
+      {/* Menú */}
       <div className={`navegacion-principal ${menuAbierto ? "mostrar" : ""}`}>
         <a
           className="enlace"
@@ -48,7 +65,7 @@ const Navegacion = () => {
           href="/confiteria"
           onClick={() => setMenuAbierto(false)}
         >
-          Confiteria
+          Confitería
         </a>
         <a
           className="enlace"
@@ -57,6 +74,14 @@ const Navegacion = () => {
         >
           Chatboot
         </a>
+
+        {/* Botón para cambiar modo claro/oscuro */}
+        <button
+          className={`modo-btn ${modo === "claro" ? "claro" : "oscuro"}`}
+          onClick={toggleModo}
+        >
+          {modo === "claro" ? "Modo Oscuro " : "Modo Claro "}
+        </button>
       </div>
     </nav>
   );

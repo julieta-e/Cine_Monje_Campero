@@ -21,7 +21,7 @@ const Footer = () => {
       </div>
 
       <div className="creditos">
-        <p className="negro">Creado por Yhonatan Leonardo Mamani Torrez ©</p>
+        <p className="negro">Monje Campero ©</p>
       </div>
     </footer>
   );

@@ -6,15 +6,15 @@ import MenuAvatar from "./MenuAvatar";
 const Header = () => {
   return (
     <header className="encabezado">
-      {/* <video
+      <video
         className="video"
-        src="videocine.mp4"
+        src="vidooficial.mp4"
         loop
         muted
         autoPlay
         playsInline
-      ></video> */}
-      <img src="/cartel.jpg" className="video" alt="" />
+      ></video>
+      {/* <img src="/cartel.jpg" className="video" alt="" /> */}
       <Buscador />
       <MenuAvatar/>
 
