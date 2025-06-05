@@ -1,5 +1,6 @@
 import Footer from "@/componentes/moleculas/Footer";
 import Header from "@/componentes/moleculas/Header";
+import ListaPeliculas from "@/componentes/organismos/ListaPeliculas";
 import Link from "next/link";
 import React from "react";
 
@@ -93,28 +94,7 @@ const Lista: React.FC = () => {
   return (
     <>
       <Header />
-      <h2>Monje campero</h2>
-      <div className="container">
-        <div className="movieList">
-          {movies.map((movie) => (
-            <div key={movie.id} className="movieCard">
-              <img src={movie.poster} alt={movie.title} className="poster" />
-              <h3 className="movieTitle">{movie.title}</h3>
-              <p className="pp">
-                <b>Fecha:</b> {movie.releaseDate}
-              </p>
-              <p className="pp">
-                <b>Géneros:</b> {movie.genres.join(", ")}
-              </p>
-              <div className="links">
-                <Link href={`/principal/${movie.id}`} className="trailerLink">
-                  Ver detalle
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ListaPeliculas movies={movies} />
       <Footer />
     </>
   );

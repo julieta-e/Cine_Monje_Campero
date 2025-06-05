@@ -144,10 +144,10 @@ const Pantalla = () => {
           className="button reset btno-comprar"
           onClick={resetSeats}
         >
-          Reset
+          Resetear
         </button>
         <button type="button" className="button confirm" onClick={confirmSeats}>
-          Confirm
+          Confirmar
         </button>
       </div>
     </div>

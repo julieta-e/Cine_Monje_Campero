@@ -52,10 +52,10 @@ const Navegacion = () => {
         </a>
         <a
           className="enlace"
-          href="/streming"
+          href="https://coddy-kia.vercel.app/"
           onClick={() => setMenuAbierto(false)}
         >
-          Streaming
+          Chatboot
         </a>
       </div>
     </nav>
