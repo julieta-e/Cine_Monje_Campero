@@ -15,10 +15,10 @@ const Header = () => {
         playsInline
       ></video>
       {/* <img src="/cartel.jpg" className="video" alt="" /> */}
-      <Buscador />
       <MenuAvatar/>
 
       <Navegacion />
+      <Buscador />
     </header>
   );
 };

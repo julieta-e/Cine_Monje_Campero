@@ -71,6 +71,8 @@ h4 {
   justify-content: center;
   align-items: center;
   height: 100vh;
+    background: linear-gradient(145deg, #2e1371, #0e0429, #040308)  ;
+
 }
 .monje {
   width: 20rem;
@@ -573,7 +575,7 @@ button:hover {
   width: 200px;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  z-index: 1000;
 }
 
 .navegacion-principal.mostrar {
@@ -665,7 +667,6 @@ button:hover {
   position: absolute; /* O fixed */
   top: 40rem; /* Posición inicial */
   left: 20px; /* Posición inicial */
-  z-index: 1000;
   cursor: move;
 }
 
@@ -1969,11 +1970,12 @@ todo antes del desastre
 body {
   color: #eee;
   transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 /* Modo claro */
 body.modo-claro {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 body.modo-claro h2 {
   color: black;
