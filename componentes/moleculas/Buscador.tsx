@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const API_KEY = "31198789798fcc8fc97608a316e33b1a";
+const API_KEY = "";
 
 const Buscador = () => {
   const [busqueda, setBusqueda] = useState("");
