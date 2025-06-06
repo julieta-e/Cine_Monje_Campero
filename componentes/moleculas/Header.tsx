@@ -15,7 +15,7 @@ const Header = () => {
         playsInline
       ></video>
       {/* <img src="/cartel.jpg" className="video" alt="" /> */}
-      <MenuAvatar/>
+      {/* <MenuAvatar/> */}
 
       <Navegacion />
       <Buscador />

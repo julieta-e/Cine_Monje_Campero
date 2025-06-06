@@ -55,6 +55,13 @@ const Navegacion = () => {
         </a>
         <a
           className="enlace"
+          href="/streming"
+          onClick={() => setMenuAbierto(false)}
+        >
+          Streming
+        </a>
+        <a
+          className="enlace"
           href="/oferta"
           onClick={() => setMenuAbierto(false)}
         >
