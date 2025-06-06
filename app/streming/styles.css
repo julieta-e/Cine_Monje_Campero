@@ -234,7 +234,8 @@ body {
 
 /* Footer */
 .footer-streaming {
-  background-color: var(--color-fondo-secundario);
+background: linear-gradient(-350deg, var(--color-fondo), var(--color-fondo-secundario));
+
   color: var(--color-acento);
   padding: 2rem 1rem;
   text-align: center;
@@ -482,4 +483,14 @@ body {
 .comment-submit-button:hover {
   background-color: #4e254c;
   box-shadow: 0 5px 15px rgba(78, 37, 76, 1);
+}
+.buscador-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  position: absolute; /* O fixed */
+  top: 50rem; /* Posición inicial */
+  left: 20px; 
+  cursor: move;
 }

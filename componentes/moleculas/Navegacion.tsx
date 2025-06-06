@@ -83,12 +83,12 @@ const Navegacion = () => {
         </a>
 
         {/* Botón para cambiar modo claro/oscuro */}
-        <button
+        {/* <button
           className={`modo-btn ${modo === "claro" ? "claro" : "oscuro"}`}
           onClick={toggleModo}
         >
           {modo === "claro" ? "Modo Oscuro " : "Modo Claro "}
-        </button>
+        </button> */}
       </div>
     </nav>
   );

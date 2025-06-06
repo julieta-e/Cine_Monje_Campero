@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import Strem from "@/componentes/organismos/Strem";
+import Buscador from "@/componentes/moleculas/Buscador";
 
 async function ingresar() {
   const response = await fetch(
@@ -40,8 +41,8 @@ export default async function page() {
             className="page-logo"
           />
         </div>
+    <Buscador/>
       </div>
-
       <section className="section-movies">
         <h2 className="section-title">Populares</h2>
         <div className="movies-grid">
