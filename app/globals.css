@@ -2333,12 +2333,11 @@ h2 {
   max-width: 700px;
   max-height: 80vh;
   overflow-y: auto;
-  background: linear-gradient(135deg, #1a0a45, #683266);
+  background: linear-gradient(135deg, #0e0624, #51184f);
   padding: 25px 30px;
   border-radius: 14px;
-  box-shadow: 0 0 30px rgba(104, 50, 102, 0.8);
+  box-shadow: 0 0 30px rgba(66, 31, 65, 0.8);
   color: #f0f0ff;
-  border: 2px solid #4e54c8;
   z-index: 10000;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
